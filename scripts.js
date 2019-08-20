@@ -7,6 +7,7 @@ const skipButtons = player.querySelectorAll('[data-skip]');
 const ranges = player.querySelectorAll('.player__slider');
 
 //
+
 function togglePlay() {
     if (video.paused) {
         video.play();
@@ -14,3 +15,16 @@ function togglePlay() {
         video.pause();
     }
 }
+
+function updateButton() {
+    const icon = this.paused ? '►' : '❚ ❚';
+    console.log(icon);
+    toggle.textContent = icon;
+}
+
+//
+
+video.addEventListener('click', togglePlay);
+video.addEventListener('play', togglePlay);
+video.addEventListener('pause', togglePlay);
+toggle.addEventListener('click', togglePlay);
